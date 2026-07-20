@@ -1,1 +1,1226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONSULTORIA EXPRESS™ | Cancuners VIP</title>
+<meta name="description" content="Uma sessão individual e objetiva com especialista senior em comportamento de viajantes e do Caribe Mexicano para resolver uma dúvida estratégica ou validar uma decisão importante no seu planejamento.">
 
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="CONSULTORIA EXPRESS™ | Cancuners VIP">
+<meta property="og:description" content="1 hora de conversa online para receber direcionamento técnico, visão prática e recomendações assertivas baseadas em experiência real de campo.">
+<meta property="og:image" content="./img/cabecalho-cancun.jpeg">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CONSULTORIA EXPRESS™ | Cancuners VIP">
+<meta name="twitter:description" content="Orientação técnica, visão prática e recomendações assertivas para seu planejamento de viagem ao Caribe Mexicano.">
+<meta name="twitter:image" content="./img/cabecalho-cancun.jpeg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="./img/logo-cancuners.webp">
+<link rel="apple-touch-icon" href="./img/logo-cancuners.webp">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0d;
+    --bg-soft: #101015;
+    --bg-card: #14141b;
+    --bg-elevated: #1a1a22;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --text: #f4f4f6;
+    --text-muted: #a8a8b4;
+    --text-dim: #6e6e7a;
+    --accent: #D4AF37;
+    --accent-light: #F0CC5E;
+    --accent-deep: #A8862A;
+    --accent-dim: rgba(212, 175, 55, 0.15);
+    --accent-glow: rgba(212, 175, 55, 0.35);
+    --accent-shadow: 0 0 1px rgba(255, 255, 255, 0.45), 0 0 14px rgba(212, 175, 55, 0.35);
+    --check-green: #22c55e;
+    --check-green-glow: rgba(34, 197, 94, 0.45);
+    --cross-red: #ef4444;
+    --cross-red-glow: rgba(239, 68, 68, 0.45);
+    --font-display: 'PT Serif', 'Lyon Text', Georgia, serif;
+    --font-body: 'Manrope', -apple-system, sans-serif;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 17px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Ambient background glow */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 60%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+  }
+
+  main {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ---- Typography ---- */
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--text);
+  }
+
+  h1 { font-size: clamp(2.5rem, 6vw, 4.75rem); font-weight: 700; }
+  h2 { font-size: clamp(1.85rem, 4vw, 3.25rem); font-weight: 700; }
+  h3 { font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 700; }
+
+  p {
+    margin-bottom: 1.25em;
+  }
+
+  strong, b {
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  em {
+    font-style: italic;
+    font-family: var(--font-display);
+    font-weight: 400;
+  }
+
+  /* Highlight utility */
+  .hl {
+    color: var(--accent-light);
+    font-weight: 700;
+    text-shadow: var(--accent-shadow);
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  /* ---- Layout ---- */
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 70px 0;
+    position: relative;
+  }
+
+  section.tight { padding: 40px 0; }
+  section.loose { padding: 100px 0; }
+
+  /* ---- Cabeçalho de capa (imagem do skyline + logo) ---- */
+  .cover {
+    position: relative;
+    width: 100%;
+    height: clamp(280px, 38vw, 520px);
+    overflow: visible;
+    background: var(--bg);
+    padding: 0 !important;
+    margin: 0 0 70px 0;
+  }
+
+  .cover-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .cover-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      rgba(10, 10, 13, 0) 0%,
+      rgba(10, 10, 13, 0.05) 70%,
+      rgba(10, 10, 13, 0.4) 100%);
+    pointer-events: none;
+  }
+
+  /* Logo "foto de perfil" */
+  .profile-logo {
+    position: absolute;
+    bottom: -58px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 4px solid var(--bg);
+    box-shadow:
+      0 0 0 1px rgba(212, 175, 55, 0.25),
+      0 8px 24px rgba(0, 0, 0, 0.6),
+      0 0 30px rgba(212, 175, 55, 0.18);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .profile-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    padding: 30px 0 30px;
+    position: relative;
+    text-align: center;
+  }
+
+  .hero h1 {
+    margin-bottom: 16px;
+    font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  }
+
+  .hero h1 .sub {
+    display: block;
+    font-size: 0.6em;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---- VIDEO SECTION ---- */
+  .video-section {
+    padding: 40px 0 30px;
+  }
+
+  .video-wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-card);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(212, 175, 55, 0.18),
+      0 30px 80px -20px rgba(0, 0, 0, 0.7),
+      0 0 60px rgba(212, 175, 55, 0.10);
+  }
+
+  .video-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* ---- Section title + emoji icon ---- */
+  .section-title {
+    margin-bottom: 28px;
+    text-align: left;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .section-title .emoji {
+    font-size: 0.85em;
+    flex-shrink: 0;
+  }
+
+  .section-title.center { text-align: center; justify-content: center; }
+
+  /* ---- Body copy blocks ---- */
+  .copy-block p {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--text);
+    margin-bottom: 22px;
+  }
+
+  .copy-block p:last-child { margin-bottom: 0; }
+
+  .copy-block p.lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  /* ---- Lista "Para quem é" ---- */
+  .para-quem-list {
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 32px 36px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+  }
+
+  .para-quem-list li {
+    padding: 14px 0;
+    font-size: 1.06rem;
+    color: var(--text);
+    line-height: 1.55;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    padding-left: 22px;
+  }
+
+  .para-quem-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .para-quem-list li:first-child {
+    padding-top: 0;
+  }
+
+  .para-quem-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 22px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+
+  .para-quem-list li:first-child::before { top: 8px; }
+
+  /* ---- Como funciona (numbered steps) ---- */
+  .steps {
+    counter-reset: steps;
+    list-style: none;
+    margin: 32px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 18px;
+  }
+
+  .steps li {
+    counter-increment: steps;
+    padding: 24px 28px 24px 88px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    position: relative;
+    font-size: 1.06rem;
+    line-height: 1.55;
+    color: var(--text);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .steps li:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateX(4px);
+  }
+
+  .steps li::before {
+    content: counter(steps);
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    font-family: var(--font-display);
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.25), inset 0 0 8px rgba(212, 175, 55, 0.08);
+  }
+
+  /* ---- Cashback warning ---- */
+  .cashback-warn {
+    padding: 32px 32px;
+    background: linear-gradient(135deg,
+      rgba(212, 175, 55, 0.1) 0%,
+      rgba(212, 175, 55, 0.04) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    margin: 36px 0 16px;
+    position: relative;
+  }
+
+  .cashback-warn::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    border-radius: 12px 12px 0 0;
+  }
+
+  .cashback-warn p {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+    line-height: 1.45;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0;
+    letter-spacing: -0.005em;
+  }
+
+  .cashback-warn .icon {
+    font-size: 1.2em;
+    margin-right: 6px;
+  }
+
+  .cashback-deadline {
+    margin-top: 18px;
+    padding: 16px 22px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .cashback-deadline .alert {
+    color: var(--cross-red);
+    margin-right: 6px;
+    text-shadow: 0 0 1px rgba(255,255,255,0.4), 0 0 14px var(--cross-red-glow);
+  }
+
+  /* ---- Incluso / Não incluso (2 cards) ---- */
+  .incluso-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 720px) {
+    .incluso-grid { grid-template-columns: 1fr; }
+  }
+
+  .incluso-card {
+    padding: 32px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .incluso-card.yes {
+    border-color: rgba(34, 197, 94, 0.25);
+    background: linear-gradient(180deg, rgba(34, 197, 94, 0.04) 0%, var(--bg-card) 60%);
+  }
+
+  .incluso-card.no {
+    border-color: rgba(239, 68, 68, 0.25);
+    background: linear-gradient(180deg, rgba(239, 68, 68, 0.04) 0%, var(--bg-card) 60%);
+  }
+
+  .incluso-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .incluso-card.yes h3 .label-icon {
+    width: 26px;
+    height: 26px;
+    background: var(--check-green);
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 14px var(--check-green-glow);
+    flex-shrink: 0;
+  }
+
+  .incluso-card.yes h3 .label-icon svg { fill: white; width: 16px; height: 16px; }
+
+  .incluso-card.no h3 .label-icon {
+    width: 26px;
+    height: 26px;
+    color: var(--cross-red);
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 1px rgba(255,255,255,0.4), 0 0 14px var(--cross-red-glow);
+    flex-shrink: 0;
+  }
+
+  .incluso-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .incluso-card ul li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.5;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .incluso-card ul li:last-child { border-bottom: none; }
+
+  .incluso-card.yes ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 18px;
+    height: 18px;
+    background: var(--check-green);
+    border-radius: 5px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 10px var(--check-green-glow);
+  }
+
+  .incluso-card.no ul li::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    color: var(--cross-red);
+    font-size: 1.1rem;
+    font-weight: 700;
+    width: 18px;
+    text-align: center;
+    text-shadow: 0 0 1px rgba(255,255,255,0.4), 0 0 12px var(--cross-red-glow);
+  }
+
+  /* ---- Testimonial card (espalhado) ---- */
+  .testimonial {
+    margin: 50px 0;
+    padding: 36px 30px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    position: relative;
+  }
+
+  .testimonial::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .testimonial-label {
+    display: inline-block;
+    font-size: 0.78rem;
+    color: var(--accent-light);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    text-shadow: var(--accent-shadow);
+  }
+
+  .testimonial h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 22px;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .testimonial-img {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+
+  .testimonial-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  /* ---- Galeria de depoimentos (3 cards) ---- */
+  .testi-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+    align-items: start;
+  }
+
+  @media (max-width: 920px) {
+    .testi-gallery {
+      grid-template-columns: 1fr;
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .testi-gallery-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 22px 18px;
+    position: relative;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .testi-gallery-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.65;
+  }
+
+  .testi-gallery-card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateY(-3px);
+  }
+
+  .testi-gallery-card .label {
+    font-size: 0.7rem;
+    color: var(--accent-light);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    text-shadow: var(--accent-shadow);
+  }
+
+  .testi-gallery-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  /* ---- Garantia (caixa-selo de destaque) ---- */
+  .guarantee {
+    margin: 30px auto 0;
+    padding: 50px 44px;
+    background:
+      radial-gradient(ellipse at top, rgba(212, 175, 55, 0.18) 0%, transparent 60%),
+      linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .guarantee::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .guarantee::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.4;
+  }
+
+  .guarantee-shield {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    filter: drop-shadow(0 0 16px var(--accent-glow));
+  }
+
+  .guarantee-shield svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .guarantee-label {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--accent-light);
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    text-shadow: var(--accent-shadow);
+  }
+
+  .guarantee h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    line-height: 1.3;
+    margin-bottom: 22px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .guarantee p {
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    max-width: 580px;
+    margin: 0 auto 24px;
+  }
+
+  .guarantee p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .guarantee .risk-free {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 12px 28px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid var(--accent);
+    border-radius: 100px;
+    color: var(--accent-light);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-shadow: var(--accent-shadow);
+    box-shadow: 0 0 24px rgba(212, 175, 55, 0.2);
+  }
+
+  /* ---- WhatsApp CTA ---- */
+  .cta-wrapper {
+    text-align: center;
+    padding: 30px 0 20px;
+  }
+
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 42px;
+    background: #25D366;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 100px;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
+    position: relative;
+    box-shadow:
+      0 0 0 1px rgba(37, 211, 102, 0.4),
+      0 0 30px rgba(37, 211, 102, 0.4),
+      0 20px 40px -10px rgba(37, 211, 102, 0.5);
+    overflow: hidden;
+  }
+
+  .whatsapp-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #4ade80, #25D366);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  .whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 0 1px rgba(37, 211, 102, 0.6),
+      0 0 60px rgba(37, 211, 102, 0.5),
+      0 30px 60px -15px rgba(37, 211, 102, 0.55);
+  }
+
+  .whatsapp-btn:hover::before {
+    opacity: 1;
+  }
+
+  .whatsapp-btn svg,
+  .whatsapp-btn span {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 540px) {
+    .whatsapp-btn {
+      padding: 18px 28px;
+      font-size: 1rem;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* ---- Final CTA section ---- */
+  .final-cta {
+    padding: 80px 0 90px;
+    background: linear-gradient(180deg, transparent 0%, var(--bg-soft) 100%);
+    position: relative;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  /* ---- Vagas closing ---- */
+  .vagas-box {
+    max-width: 620px;
+    margin: 26px auto;
+    padding: 22px 30px;
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .vagas-box .x {
+    font-size: 1.1rem;
+    color: var(--cross-red);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.4), 0 0 14px var(--cross-red-glow);
+  }
+
+  .vagas-box .x::before {
+    content: '✕';
+    margin-right: 8px;
+  }
+
+  .vagas-box .sub {
+    font-style: italic;
+    font-family: var(--font-display);
+    color: var(--text);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  /* ---- Reveal animations ---- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---- Mobile tweaks ---- */
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    section { padding: 50px 0; }
+    .hero { padding: 24px 0 20px; }
+    .video-section { padding: 28px 0 20px; }
+    .video-wrap { padding: 0 16px; }
+    .testimonial { padding: 28px 22px; margin: 40px 0; }
+    .para-quem-list { padding: 26px 24px; }
+    .steps li { padding: 22px 22px 22px 78px; font-size: 1rem; }
+    .steps li::before { width: 38px; height: 38px; line-height: 36px; font-size: 1rem; left: 20px; }
+    .cashback-warn { padding: 26px 22px; }
+    .guarantee { padding: 36px 26px; }
+    .incluso-card { padding: 26px 22px; }
+    .profile-logo {
+      width: 92px;
+      height: 92px;
+      bottom: -42px;
+      border-width: 3px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<main>
+
+  <!-- ================ COVER (skyline + logo perfil) ================ -->
+  <section class="cover">
+    <div class="cover-img">
+      <img src="./img/cabecalho-cancun.jpeg" alt="Vista panorâmica de Cancún" loading="eager">
+    </div>
+    <div class="profile-logo">
+      <img src="./img/logo-cancuners.webp" alt="Cancuners — Assessoria Turística">
+    </div>
+  </section>
+
+  <!-- ================ HERO ================ -->
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="reveal">
+        CONSULTORIA <span class="hl">EXPRESS™</span>
+        <span class="sub">| Cancuners VIP</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ================ VIDEO ================ -->
+  <section class="video-section">
+    <div class="video-wrap">
+      <div class="video-frame reveal">
+        <iframe
+          src="https://www.youtube.com/embed/5KjVXks2oJ4?si=-2ocFE9zh_kDzNZL&rel=0"
+          title="Consultoria Express - Cancuners VIP"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ 🎯 O QUE É ================ -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title reveal">
+        <span class="emoji">🎯</span> O que é?
+      </h2>
+
+      <div class="copy-block">
+        <p class="lead reveal">
+          Uma sessão individual e objetiva comigo, ou alguém do nosso time, especialista <strong>senior em comportamento de viajantes</strong> e do <span class="hl">Caribe Mexicano</span>, para resolver uma dúvida estratégica ou validar uma decisão importante no seu planejamento de viagem ao Caribe Mexicano.
+        </p>
+
+        <p class="reveal">
+          Em <span class="hl">1 hora de conversa online</span>, você recebe <strong>direcionamento técnico, visão prática e recomendações assertivas</strong> baseadas em experiência real de campo — resultado de <span class="underline">mais de 10 anos atuando diretamente no destino.</span>
+        </p>
+
+        <p class="reveal">
+          O foco é <strong>otimizar seu tempo</strong>, <strong>evitar gastos desnecessários</strong> e <strong>aumentar a eficiência</strong> do seu planejamento.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ 📌 PARA QUEM É ================ -->
+  <section class="tight">
+    <div class="wrap">
+      <h2 class="section-title reveal">
+        <span class="emoji">📌</span> Para quem é?
+      </h2>
+
+      <ul class="para-quem-list reveal">
+        <li>Está em fase de <strong>decisão sobre hotel, roteiro, ou logística.</strong></li>
+        <li>Quer <strong>validação profissional</strong> antes de fechar serviços.</li>
+        <li>Busca <strong>segurança e clareza</strong> para planejar com confiança.</li>
+        <li>Valoriza uma conversa <strong>rápida, técnica e direcionada</strong>, sem rodeios.</li>
+      </ul>
+
+      <!-- DEPOIMENTO 1 (Karen Leme) - logo após "Para quem é?" -->
+      <div class="testimonial reveal">
+        <span class="testimonial-label">Depoimento · Karen Leme</span>
+        <div class="testimonial-img">
+          <img src="./img/depoimento-karen.webp" alt="Avaliação 5 estrelas no Google de Karen Leme — Conhecer Cancún foi um sonho realizado do qual a equipe Cancuners fez parte e toda a diferença." loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ ⚙️ COMO FUNCIONA ================ -->
+  <section class="tight">
+    <div class="wrap">
+      <h2 class="section-title reveal">
+        <span class="emoji">⚙️</span> Como funciona
+      </h2>
+
+      <ol class="steps reveal">
+        <li>Você preenche um breve <strong>formulário de diagnóstico</strong> para que eu possa analisar sua necessidade e me preparar para seu atendimento, otimizando assim o nosso tempo que será investido na solução.</li>
+        <li>Agendamos sua <strong>reunião de 1 hora via Google Meet</strong>.</li>
+        <li>Durante o encontro, vou te escutar e <strong>entregar orientações personalizadas</strong>.</li>
+        <li>Você recebe a <strong>gravação</strong> e informações valiosas alinhadas na reunião, com as instruções para os próximos passos por e-mail, para consultar sempre que precisar.</li>
+      </ol>
+
+      <!-- DEPOIMENTO 2 (Joana J) - depois de "Como funciona" -->
+      <div class="testimonial reveal">
+        <span class="testimonial-label">Depoimento · Joana J</span>
+        <h3>"Experiencia única... faria tudo de novo ❤️"</h3>
+        <div class="testimonial-img">
+          <img src="./img/depoimento-joana.webp" alt="Avaliação de Joana J — Só tenho elogios para a família Cancuners. Foi espetacular, eles conseguiram superar qualquer expectativa." loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ CASHBACK ================ -->
+  <section class="tight">
+    <div class="wrap">
+      <div class="cashback-warn reveal">
+        <p>
+          <span class="icon">💎</span>
+          Caso opte por fazer o <strong>upgrade para a Assessoria Completa</strong> da Cancuners, o valor investido na consultoria é <span class="hl">100% revertido como cashback.</span>
+        </p>
+
+        <div class="cashback-deadline">
+          <span class="alert">⚠️</span>
+          Esse upgrade pode ser feito em <strong>até 15 dias</strong> após a reunião da Consultoria Express.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ O QUE INCLUI / NÃO INCLUI ================ -->
+  <section class="tight">
+    <div class="wrap-wide">
+      <div class="incluso-grid">
+
+        <div class="incluso-card yes reveal">
+          <h3>
+            <span class="label-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </span>
+            O que inclui
+          </h3>
+          <ul>
+            <li>Formulário prévio de análise do perfil e necessidade</li>
+            <li>1 hora de consultoria via Google Meet — com agendamento</li>
+            <li>Direcionamento prático e plano de ação via e-mail</li>
+            <li>Cashback integral em upgrade de assessoria</li>
+          </ul>
+        </div>
+
+        <div class="incluso-card no reveal">
+          <h3>
+            <span class="label-icon">✕</span>
+            O que não inclui
+          </h3>
+          <ul>
+            <li>Atendimento via WhatsApp</li>
+            <li>Entrega de roteiros, planejamento financeiro ou materiais exclusivos Cancuners</li>
+            <li>Horas extras de consultoria</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ GALERIA DE DEPOIMENTOS (3 cards) ================ -->
+  <section>
+    <div class="wrap-wide">
+      <h2 class="section-title center reveal">
+        Quem já passou por aqui <span class="hl">recomenda</span>
+      </h2>
+
+      <div class="testi-gallery">
+
+        <div class="testi-gallery-card reveal">
+          <div class="label">Depoimento · Márcia D</div>
+          <img src="./img/depoimento-marcia.jpg" alt="Avaliação 5 estrelas no Google de Márcia D sobre a CANCUNERS Consultoria Express — A viagem acabou e deu tudo certo. Cada informação e cada dica fez toda a diferença. Todo o grupo está grato pela ajuda. Viagem em família, fevereiro de 2026." loading="lazy">
+        </div>
+
+        <div class="testi-gallery-card reveal">
+          <div class="label">Depoimento · Simone N</div>
+          <img src="./img/depoimento-simone.jpg" alt="Avaliação 5 estrelas no Google de Simone N sobre a Consultoria Express — Trabalho excelente da Cancuners. A consultoria orientou a ordem perfeita dos passeios, indicação de guias confiáveis e dicas de restaurantes. Sem o serviço, a viagem seria nota 4; com a Cancuners, foi 10. Janeiro de 2026." loading="lazy">
+        </div>
+
+        <div class="testi-gallery-card reveal">
+          <div class="label">Depoimento · Márcio C</div>
+          <img src="./img/depoimento-marcio.jpg" alt="Avaliação 5 estrelas no Google de Márcio C sobre a Assessoria para viagem — Só coisas positivas. A assessoria foi exatamente o que buscávamos: prática e direta. Tudo correu como planejamos, passeios e restaurantes sugeridos foram perfeitos. Recomendamos a consultoria para todos. Viagem em família, março de 2026." loading="lazy">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ GARANTIA (selo de destaque) ================ -->
+  <section class="tight">
+    <div class="wrap">
+      <div class="guarantee reveal">
+        <div class="guarantee-shield">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 6L8 14V32C8 46.4 18.4 56 32 60C45.6 56 56 46.4 56 32V14L32 6Z"
+                  stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="rgba(212, 175, 55, 0.08)"/>
+            <path d="M22 32L29 39L43 25"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <span class="guarantee-label">Garantia incondicional</span>
+
+        <h3>Meu compromisso é com <span class="hl">resultado real</span>.</h3>
+
+        <p>
+          Você não está comprando apenas uma conversa — está investindo em <strong>clareza, segurança e energia alinhada</strong>.
+        </p>
+
+        <p>
+          Se ao final da sessão você sentir que eu <strong>não gerei valor real</strong> pra você, <span class="underline">eu devolvo integralmente o seu investimento.</span> Simples, direto e justo — porque o resultado é o que faz sentido.
+        </p>
+
+        <div class="risk-free">Experimente sem risco</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ FINAL CTA ================ -->
+  <section class="final-cta">
+    <div class="wrap">
+      <h2 class="section-title center reveal" style="margin-bottom: 24px;">
+        Pronto para começar?
+      </h2>
+
+      <p class="reveal" style="font-size: 1.08rem; text-align: center; max-width: 620px; margin: 0 auto 30px; color: var(--text-muted);">
+        Fale agora com a nossa <strong>Especialista no WhatsApp</strong> para verificar a disponibilidade de agenda e receber as informações de <span class="hl">preço</span> e <span class="hl">forma de pagamento</span>.
+      </p>
+
+      <div class="cta-wrapper reveal">
+        <a href="https://wa.link/27u50h" class="whatsapp-btn" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="vagas-box reveal">
+        <span class="x">Vagas Limitadas</span>
+        <p class="sub">Recebemos apenas 20 clientes por mês.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Scroll-triggered reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
+        const idx = siblings.indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, idx * 70);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -80px 0px'
+  });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Initial reveal for above-the-fold hero items
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero .reveal, .video-section .reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 100 + (i * 150));
+    });
+  });
+</script>
+
+</body>
+</html>
